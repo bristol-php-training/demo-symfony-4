@@ -35,4 +35,5 @@ jobs:
     - run: mysql -h 127.0.0.1 -u root -e "GRANT ALL ON demo.* TO demo;"
    
     - run: composer install
+    - run: bin/console --env=test doctrine:migrations:migrate -n
     - run: bin/phpunit  
