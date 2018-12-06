@@ -36,4 +36,14 @@ jobs:
    
     - run: composer install
     - run: bin/console --env=test doctrine:migrations:migrate -n
+
+    - restore_cache:
+        keys:
+        - phpunit-6.5
+
     - run: bin/phpunit  
+
+    - save_cache:
+        key: phpunit-6.5
+        paths:
+        - bin/.phpunit
