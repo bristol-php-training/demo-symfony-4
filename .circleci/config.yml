@@ -37,9 +37,9 @@ jobs:
     - run: composer install
     - run: bin/console --env=test lint:twig templates
     - run: bin/console --env=test lint:yaml config
-    - run: bin/console --env=test doctrine:schema:validate
 
     - run: bin/console --env=test doctrine:migrations:migrate -n
+    - run: bin/console --env=test doctrine:schema:validate
 
     - restore_cache:
         keys:
