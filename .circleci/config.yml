@@ -26,7 +26,7 @@ jobs:
         paths:
         - vendor
 
-    - run: sudo apt-get install -y postgresql-client 
+    - run: sudo apt-get install -y postgresql-client  || true
     - run: sudo -E docker-php-ext-install pdo_pgsql
    
     - run: composer install
